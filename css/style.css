@@ -7,7 +7,7 @@ html, body {
 }
 @media(max-width:768px) { 
     #logo img {
-        width: 50%
+        width: 75%
     }
     #counter .countdown {
         font-size: 1.3em !important;
