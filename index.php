@@ -4,7 +4,11 @@
 
     if(isset($_POST['submit'])){
         
-        $header = 'From: '.$_POST['email'];
+        
+        $headers =  'MIME-Version: 1.0' . "\r\n"; 
+        $headers .= 'From: Your name <info@address.com>' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $header .= 'From: '.$_POST['email']."\r\n";
         $to = 'anega006@gmail.com';
         $subject = 'Email signup';
         $body = 'Please sign me up to the mailing list';
@@ -107,12 +111,10 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.countdown.js"></script>  
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>   
     <script type="text/javascript">
     $(function() {
         $('.countdown').countdown({
