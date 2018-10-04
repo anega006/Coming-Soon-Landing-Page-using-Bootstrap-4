@@ -28,7 +28,8 @@
         
     }
 
-?>
+?>          
+
 
 <!doctype html>
 <html lang="en">
@@ -103,7 +104,7 @@
                       
                       <?php if(empty($emailError)){ echo $emailError;}?>
                       <?php if(empty($result)){ echo $result;}?>
-                      
+     
                   </div>
               </div>
           </div>
