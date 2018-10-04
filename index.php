@@ -1,35 +1,35 @@
 <?php
+    
+    error_reporting(0);
     $emailError = '';
     $result = '';
 
     if(isset($_POST['submit'])){
         
-        
         $headers =  'MIME-Version: 1.0' . "\r\n"; 
         $headers .= 'From: Your name <info@address.com>' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $header .= 'From: '.$_POST['email']."\r\n";
+        $headers .= 'From: '.$_POST['email']."\r\n";
         $to = 'anega006@gmail.com';
         $subject = 'Email signup';
         $body = 'Please sign me up to the mailing list';
             
         if(!isset($_POST['email'])){
-            $emailError = '<div class="text-danger><i class="fa fa-exclamation-triangle" aria-hidden="true></i> &nbsp;Please enter a valid email address</div>';
+            $emailError = '<div class="text-danger><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp; Please enter a valid email address</div>';
         }
         
         if(!$emailError){
-            if(mail($to, $subject, $body, $header)){
-                $result = '<div class="text-success"><i class="fa fa-check" aria-hidden="true></i> &nbsp;Thank You! We will keep you updated.</div>';
+            if(mail($to, $subject, $body, $headers)){
+                  $result = '<div class="text-success h3"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Thank You! We will keep you updated.</div>';
             }
             else{
-                $result = '<div class="text-danger><i class="fa fa-exclamation-triangle" aria-hidden="true></i> &nbsp;Sorry there has been an error, please try again.</div>';
+                  $result = '<div class="text-danger h3"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp; Sorry there has been an error, please try again.</div>';
             }
         }
         
     }
 
-?>          
-
+?>
 
 <!doctype html>
 <html lang="en">
@@ -95,27 +95,30 @@
       
       <section id="signup">
           <div class="container">
-              <div class="row">
-                  <div class="col-md-12 text-center">
-                      <form class="form-inline" role="form" method="post" action="#signup">
-                          <input type="email" class="form-control form-control-sm" name="email" placeholder="info@example.com">
-                          <button type="submit" class="btn btn-sm btn-signup" name="submit" value="send">Find out more</button>
-                      </form>
-                      
-                      <?php if(empty($emailError)){ echo $emailError;}?>
-                      <?php if(empty($result)){ echo $result;}?>
-     
+              <form class="form-inline" role="form" method="post" action="#signup">
+                  <div class="row d-flex justify-content-center">
+                      <div class="col-xs-6 mx-1">
+                          <input type="email" class="form-control" name="email" placeholder="info@example.com">
+                      </div>
+                      <div class="col-xs-4 mx-1">
+                          <button type="submit" class="btn btn-signup" name="submit" value="send">Find out more</button>
+                      </div>
                   </div>
-              </div>
+              </form>
+              <div class="text-center"><?php if(!empty($emailError)){ echo $emailError; }?></div>
+              <div class="text-center"><?php if(!empty($result)){ echo $result; }?></div>
           </div>
       </section>
 
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.countdown.js"></script>   
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>  
     <script type="text/javascript">
     $(function() {
         $('.countdown').countdown({
