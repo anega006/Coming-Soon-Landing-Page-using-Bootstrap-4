@@ -7,19 +7,14 @@ html, body {
 }
 @media(max-width:768px) { 
     #logo img {
-        width: 50%
+/*        width: 70%;*/
     }
     #counter .countdown {
-        font-size: 1.3em !important;
+        font-size: 1.8em !important;
     }
     #icons fa {
         margin: 0px !important;
         font-size: 1.6em;
-    }
-}
-@media(min-width:321px) and (max-width:568px) {
-    #logo img {
-        width: 20%
     }
 }
 #logo img {
