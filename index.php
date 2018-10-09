@@ -52,7 +52,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-md-12 text-center">
-                      <img src="img/img/my-logo.png" class="img-fluid" height="300px" width="280px">
+                      <img src="img/my-logo.png" class="img-fluid" height="300px" width="280px">
                   </div>
               </div>
           </div>
